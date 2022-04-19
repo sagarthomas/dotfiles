@@ -1,1 +1,13 @@
-require'nvim-tree'.setup {}
+require'nvim-tree'.setup {
+
+    renderer = {
+        indent_markers = {
+            enable = true,
+            icons = {
+                corner = "└ ",
+                edge = "│ ",
+                none = "  ",
+            }
+        }
+    }
+}
