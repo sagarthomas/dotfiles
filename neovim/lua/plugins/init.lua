@@ -1,31 +1,40 @@
-local Plug = vim.fn['plug#']
-vim.call('plug#begin','~/.vim/plugged')
+return require'packer'.startup(function()
+    use 'wbthomason/packer.nvim'
 
--- Appearance
-Plug 'Luxed/ayu-vim'
-Plug 'kyazdani42/nvim-web-devicons'  
-Plug 'nvim-lualine/lualine.nvim'
+    -- Appearance
+    use 'Luxed/ayu-vim'
+    use 'kyazdani42/nvim-web-devicons'  
+    use 'nvim-lualine/lualine.nvim'
 
--- Plug 'beauwilliams/statusline.lua'
--- Plug 'feline-nvim/feline.nvim'
+    -- Editor
+    use 'kyazdani42/nvim-tree.lua'
+    use 'akinsho/bufferline.nvim'
+    use 'lukas-reineke/indent-blankline.nvim'
 
--- Editor
-Plug 'kyazdani42/nvim-tree.lua'
-Plug 'akinsho/bufferline.nvim'
-Plug 'lukas-reineke/indent-blankline.nvim'
 
--- Telescope
+    -- Git
+    use 'mhinz/vim-signify'
+    use 'tpope/vim-fugitive'
 
--- LSP
-Plug 'neovim/nvim-lspconfig'
+    -- Telescope
+    use {
+        'nvim-telescope/telescope.nvim',
+        requires = {
+            {'nvim-lua/plenary.nvim'},
+            {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        }
+    }
 
-vim.call('plug#end')
+    -- LSP
+    use 'neovim/nvim-lspconfig'
+    use 'hrsh7th/cmp-nvim-lsp'
+    use 'hrsh7th/cmp-buffer'
+    use 'hrsh7th/cmp-path'
+    use 'hrsh7th/nvim-cmp'
+    use 'L3MON4D3/LuaSnip'
+    use 'saadparwaiz1/cmp_luasnip'
+end)
 
--- Require all config 
-require('plugins.config.lualine')
-require('plugins.config.bufferline')
-require('plugins.config.blankline')
-require('plugins.config.nvimtree')
 
 
 
