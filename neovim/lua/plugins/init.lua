@@ -10,6 +10,7 @@ return require'packer'.startup(function()
     use 'kyazdani42/nvim-tree.lua'
     use 'akinsho/bufferline.nvim'
     use 'lukas-reineke/indent-blankline.nvim'
+    use 'sbdchd/neoformat'
 
 
     -- Git
@@ -25,6 +26,16 @@ return require'packer'.startup(function()
         }
     }
 
+    -- Language 
+    use 'maxmellon/vim-jsx-pretty'
+    use 'vim-python/python-syntax'
+    use 'prettier/vim-prettier'
+    use {
+        'fatih/vim-go',
+        run = ':GoUpdateBinaries'
+    }
+
+
     -- LSP
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/cmp-nvim-lsp'
@@ -33,6 +44,7 @@ return require'packer'.startup(function()
     use 'hrsh7th/nvim-cmp'
     use 'L3MON4D3/LuaSnip'
     use 'saadparwaiz1/cmp_luasnip'
+    use 'onsails/lspkind.nvim'
 end)
 
 
