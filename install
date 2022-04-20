@@ -4,3 +4,17 @@
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+# Install pyright
+npm i -g pyright
+
+# Install tsserver
+
+npm install -g typescript typescript-language-server
+
+# Install gopls
+
+go install golang.org/x/tools/gopls@latest
+
+# Install black
+pip3 install black
+

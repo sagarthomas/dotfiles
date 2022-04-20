@@ -9,6 +9,7 @@ require('plugins.config.bufferline')
 require('plugins.config.blankline')
 require('plugins.config.nvimtree')
 require('plugins.config.telescope')
+require('plugins.config.treesitter')
 
 -- Require LSP specific plugin config
 require('plugins.config.lsp.lspconfig')

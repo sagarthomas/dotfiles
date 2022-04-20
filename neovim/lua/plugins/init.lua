@@ -8,14 +8,18 @@ return require'packer'.startup(function()
 
     -- Editor
     use 'kyazdani42/nvim-tree.lua'
-    use 'akinsho/bufferline.nvim'
-    use 'lukas-reineke/indent-blankline.nvim'
+    use 'akinsho/bufferline.nvim' -- For showing buffers on top
+    use 'lukas-reineke/indent-blankline.nvim' -- For indent lines
     use 'sbdchd/neoformat'
+    use {
+        'nvim-treesitter/nvim-treesitter', -- For better syntax highlighting
+        run = ':TSUpdate'
+    }
 
 
     -- Git
-    use 'mhinz/vim-signify'
-    use 'tpope/vim-fugitive'
+    use 'mhinz/vim-signify' -- For showing git +/- on the editor
+    use 'tpope/vim-fugitive' -- For git controls
 
     -- Telescope
     use {
