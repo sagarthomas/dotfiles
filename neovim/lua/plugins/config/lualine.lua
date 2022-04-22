@@ -10,6 +10,7 @@ require('lualine').setup {
         lualine_a = {
             {
                 'mode',
+                separator =  { left = '', right = ''}
                 -- color = { fg = '#ffaa88', bg = 'grey', gui='italic,bold' }
             }
         },
@@ -18,12 +19,19 @@ require('lualine').setup {
             {
                 'filename',
                 path = 1,
-            }
+            },
+            'diff'
         },
-        lualine_x = {'encoding', 'filetype', 'location', 'progress'},
-        lualine_y = {},
-        -- lualine_z = {'location'}
-        lualine_z = {'branch', 'diff', 'diagnostics'},
+        lualine_x = { 'filetype', 'location', 'progress'},
+        lualine_y = {'diagnostics', 'branch'},
+        lualine_z = {}
+       -- lualine_z = {
+       --     {
+       --         'branch',
+       --         separator =  { left = '', right = ''}
+
+       --     }
+       -- },
     },
     extensions = {'nvim-tree'}
 }
