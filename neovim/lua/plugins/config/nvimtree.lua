@@ -9,5 +9,8 @@ require'nvim-tree'.setup {
                 none = "  ",
             }
         }
+    },
+    git = {
+        ignore = false
     }
 }

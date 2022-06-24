@@ -33,3 +33,4 @@ vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 set.laststatus = 2
 set.conceallevel = 3
 
+vim.cmd[[autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy]]

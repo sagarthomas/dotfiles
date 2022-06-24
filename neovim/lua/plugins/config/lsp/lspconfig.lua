@@ -16,6 +16,7 @@ local on_attach = function(client, bufnr)
     vim.keymap.set("i", "<C-k>", vim.lsp.buf.signature_help, { buffer = 0 }) -- Allow for signature_help in insert mode
     vim.keymap.set("n", "gr", vim.lsp.buf.references, { buffer = 0 }) -- Allow for signature_help in insert mode
     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { buffer = 0 }) -- Allow for signature_help in insert mode
+    vim.keymap.set("n", "<space>d", vim.diagnostic.open_float, {buffer = 0})
     --vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
     --vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     --vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)

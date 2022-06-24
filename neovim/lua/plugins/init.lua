@@ -3,7 +3,11 @@ return require'packer'.startup(function()
 
     -- Appearance
     use 'Luxed/ayu-vim'
-    use 'kyazdani42/nvim-web-devicons'  
+    use({
+	"catppuccin/nvim",
+	as = "catppuccin"
+    })
+    use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
 
     -- Editor
@@ -15,6 +19,7 @@ return require'packer'.startup(function()
         'nvim-treesitter/nvim-treesitter', -- For better syntax highlighting
         run = ':TSUpdate'
     }
+
 
 
     -- Git
@@ -30,7 +35,7 @@ return require'packer'.startup(function()
         }
     }
 
-    -- Language 
+    -- Language
     use 'maxmellon/vim-jsx-pretty'
     use 'vim-python/python-syntax'
     use 'prettier/vim-prettier'
@@ -38,6 +43,10 @@ return require'packer'.startup(function()
         'fatih/vim-go',
         run = ':GoUpdateBinaries'
     }
+    -- The below is for better markdown syntax for fenced code blocks
+    use 'godlygeek/tabular'
+    use 'preservim/vim-markdown'
+
 
 
     -- LSP
