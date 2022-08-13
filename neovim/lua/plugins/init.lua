@@ -4,8 +4,8 @@ return require'packer'.startup(function()
     -- Appearance
     use 'Luxed/ayu-vim'
     use({
-	"catppuccin/nvim",
-	as = "catppuccin"
+        "catppuccin/nvim",
+        as = "catppuccin"
     })
     use 'kyazdani42/nvim-web-devicons'
     use 'nvim-lualine/lualine.nvim'
@@ -19,6 +19,7 @@ return require'packer'.startup(function()
         'nvim-treesitter/nvim-treesitter', -- For better syntax highlighting
         run = ':TSUpdate'
     }
+    use 'nvim-treesitter/nvim-treesitter-context'
 
 
 

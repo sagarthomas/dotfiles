@@ -15,6 +15,7 @@ map('n', '<leader>l', '<C-w>l<CR>', opts)
 map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
 map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
 map('n', '<leader>ps', ':Telescope live_grep<CR>', opts)
+map('n', '<leader>fs', ':Telescope current_buffer_fuzzy_find<CR>', opts)
 
 -- Vim Fugitive
 map('n', '<leader>gj', '<cmd>diffget //3<CR>', opts)
