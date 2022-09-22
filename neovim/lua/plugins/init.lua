@@ -24,7 +24,7 @@ return require'packer'.startup(function()
 
 
     -- Git
-    use 'mhinz/vim-signify' -- For showing git +/- on the editor
+    use 'lewis6991/gitsigns.nvim' -- For showing git +/- on the editor
     use 'tpope/vim-fugitive' -- For git controls
 
     -- Telescope
@@ -37,7 +37,7 @@ return require'packer'.startup(function()
     }
 
     -- Language
-    use 'maxmellon/vim-jsx-pretty'
+    --use 'maxmellon/vim-jsx-pretty'
     use 'vim-python/python-syntax'
     use 'prettier/vim-prettier'
     use {
