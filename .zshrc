@@ -8,5 +8,8 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 bindkey '^ ' autosuggest-accept
 bindkey -s '^f' "tmux-sessionizer\n"
 
-path+=("/usr/local/go/bin")
+tilde=~
+path+=("/usr/local/go/bin" "${tilde}/go/bin" "${tilde}/.local/bin")
+
+alias ls='exa --icons'
 
