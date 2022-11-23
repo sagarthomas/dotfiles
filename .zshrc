@@ -9,7 +9,7 @@ bindkey '^ ' autosuggest-accept
 bindkey -s '^f' "tmux-sessionizer\n"
 
 tilde=~
-path+=("/usr/local/go/bin" "${tilde}/go/bin" "${tilde}/.local/bin")
+path+=("/usr/local/go/bin" "${tilde}/go/bin" "${tilde}/.local/bin" "${tilde}/.local/neovim/bin" )
 
 alias ls='exa --icons'
 
