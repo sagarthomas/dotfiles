@@ -27,6 +27,13 @@ set.cursorline = true
 set.hidden = true
 set.scrolloff = 12
 
+-- Decrease update time
+vim.o.updatetime = 250
+vim.wo.signcolumn = 'yes'
+
+-- Set completeopt to have a better completion experience
+vim.o.completeopt = 'menuone,noselect'
+
 set.termguicolors = true
 vim.cmd[[set colorcolumn=80]]
 vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]

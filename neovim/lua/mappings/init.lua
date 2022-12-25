@@ -1,24 +1,29 @@
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+--local map = vim.api.nvim_set_keymap
+--local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
 
-map('n', '<leader>n', ':NvimTreeToggle<CR>', opts)
+-- Remap for dealing with word wrap
+vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+
+vim.keymap.set('n', '<leader>n', ':NvimTreeToggle<CR>')
 
 -- Pane movement
-map('n', '<leader>j', '<C-w>j<CR>', opts)
-map('n', '<leader>h', '<C-w>h<CR>', opts)
-map('n', '<leader>k', '<C-w>k<CR>', opts)
-map('n', '<leader>l', '<C-w>l<CR>', opts)
+vim.keymap.set('n', '<leader>j', '<C-w>j<CR>')
+vim.keymap.set('n', '<leader>h', '<C-w>h<CR>')
+vim.keymap.set('n', '<leader>k', '<C-w>k<CR>')
+vim.keymap.set('n', '<leader>l', '<C-w>l<CR>')
 
--- Telescope
-map('n', '<leader>ff', ':Telescope find_files<CR>', opts)
-map('n', '<leader>fb', ':Telescope buffers<CR>', opts)
-map('n', '<leader>ps', ':Telescope live_grep<CR>', opts)
-map('n', '<leader>fs', ':Telescope current_buffer_fuzzy_find<CR>', opts)
+-- Diagnostic keymaps
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next)
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist)
 
 -- Vim Fugitive
-map('n', '<leader>gj', '<cmd>diffget //3<CR>', opts)
-map('n', '<leader>gf', '<cmd>diffget //2<CR>', opts)
-map('n', '<leader>gs', '<cmd>G<CR>', opts)
+vim.keymap.set('n', '<leader>gj', '<cmd>diffget //3<CR>')
+vim.keymap.set('n', '<leader>gf', '<cmd>diffget //2<CR>')
+vim.keymap.set('n', '<leader>gs', '<cmd>G<CR>')
 
