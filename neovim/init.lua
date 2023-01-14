@@ -105,6 +105,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
   pattern = vim.fn.expand '$MYVIMRC',
 })
 
+require("Comment").setup()
+
 --require('plugins')
 -- Basic Configuration
 require('settings')
@@ -123,7 +125,7 @@ require('plugins.config.gitsigns')
 require('plugins.config.lspconfig')
 --require('plugins.config.bufferline')
 require('plugins.config.nvimtree')
-require('plugins.config.context')
+--require('plugins.config.context')
 
 -- Require LSP specific plugin config
 --require('plugins.config.lsp.lspconfig')
