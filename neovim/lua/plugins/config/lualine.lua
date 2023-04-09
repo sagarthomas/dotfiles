@@ -14,13 +14,12 @@ require('lualine').setup {
                 -- color = { fg = '#ffaa88', bg = 'grey', gui='italic,bold' }
             }
         },
-        lualine_b = {},
+        lualine_b = {'buffers'},
         lualine_c = {
             {
                 'filename',
                 path = 1,
             },
-            'diff'
         },
         lualine_x = { 'filetype', 'location', 'progress'},
         lualine_y = {'diagnostics', 'branch'},
