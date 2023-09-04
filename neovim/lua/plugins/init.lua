@@ -1,67 +1,74 @@
-return require'packer'.startup(function()
-    use 'wbthomason/packer.nvim'
-
-    -- Appearance
-    use 'Luxed/ayu-vim'
-    use({
+return {
+    "nvim-lualine/lualine.nvim",-- Status bar
+    "lukas-reineke/indent-blankline.nvim", -- Adds indentation guide lines
+    "lewis6991/gitsigns.nvim", -- Adds git line status
+    "tpope/vim-fugitive",
+    -- Colorscheme
+    {
         "catppuccin/nvim",
-        as = "catppuccin"
-    })
-    use 'kyazdani42/nvim-web-devicons'
-    use 'nvim-lualine/lualine.nvim'
-
-    -- Editor
-    use 'kyazdani42/nvim-tree.lua'
-    use 'akinsho/bufferline.nvim' -- For showing buffers on top
-    use 'lukas-reineke/indent-blankline.nvim' -- For indent lines
-    use 'sbdchd/neoformat'
-    use {
-        'nvim-treesitter/nvim-treesitter', -- For better syntax highlighting
-        run = ':TSUpdate'
-    }
-    use 'nvim-treesitter/nvim-treesitter-context'
-
-
-
-    -- Git
-    use 'lewis6991/gitsigns.nvim' -- For showing git +/- on the editor
-    use 'tpope/vim-fugitive' -- For git controls
-
-    -- Telescope
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = {
-            {'nvim-lua/plenary.nvim'},
-            {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+        name = "catppuccin"
+    },
+    -- File tree
+    {
+        "kyazdani42/nvim-tree.lua",
+        dependencies = {
+            "nvim-tree/nvim-web-devicons", -- File icons
         }
-    }
+    },
+    {
+        "neovim/nvim-lspconfig",
+        dependencies = {
+         -- Automatically install LSPs to stdpath for neovim
+          { "williamboman/mason.nvim", config = true },
+          "williamboman/mason-lspconfig.nvim",
 
-    -- Language
-    --use 'maxmellon/vim-jsx-pretty'
-    use 'vim-python/python-syntax'
-    use 'prettier/vim-prettier'
-    use {
-        'fatih/vim-go',
-        run = ':GoUpdateBinaries'
-    }
-    -- The below is for better markdown syntax for fenced code blocks
-    use 'godlygeek/tabular'
-    use 'preservim/vim-markdown'
+          -- Additional lua configuration, makes nvim stuff amazing!
+          --"folke/neodev.nvim",
+        }
+    },
+    -- Autocompletion
+    {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+          -- Snippet Engine & its associated nvim-cmp source
+          "L3MON4D3/LuaSnip",
+          --"saadparwaiz1/cmp_luasnip",
 
+          -- Adds LSP completion capabilities
+          "hrsh7th/cmp-nvim-lsp",
 
-
-    -- LSP
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/cmp-nvim-lsp'
-    use 'hrsh7th/cmp-buffer'
-    use 'hrsh7th/cmp-path'
-    use 'hrsh7th/nvim-cmp'
-    use 'L3MON4D3/LuaSnip'
-    use 'saadparwaiz1/cmp_luasnip'
-    use 'onsails/lspkind.nvim'
-    use 'williamboman/nvim-lsp-installer'
-end)
-
-
-
-
+          -- Adds a number of user-friendly snippets
+          --"rafamadriz/friendly-snippets",
+          -- Adds icons for autocomplete menu
+          "onsails/lspkind.nvim"
+        }
+    },
+    -- Fuzzy Finder
+    {
+        "nvim-telescope/telescope.nvim",
+        branch = "0.1.x",
+        dependencies = {
+            "nvim-lua/plenary.nvim",
+            -- Fuzzy Finder Algorithm which requires local dependencies to be built.
+            -- Only load if `make` is available. Make sure you have the system
+            -- requirements installed.
+            {
+                'nvim-telescope/telescope-fzf-native.nvim',
+                -- NOTE: If you are having trouble with this installation,
+                --       refer to the README for telescope-fzf-native for more instructions.
+                build = 'make',
+                cond = function()
+                  return vim.fn.executable 'make' == 1
+                end,
+            },
+        }
+    },
+    -- Highlight, edit, and navigate code
+    {
+        'nvim-treesitter/nvim-treesitter',
+        dependencies = {
+          'nvim-treesitter/nvim-treesitter-textobjects',
+        },
+        build = ':TSUpdate',
+    },
+}

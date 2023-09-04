@@ -14,7 +14,8 @@ require('lualine').setup {
                 -- color = { fg = '#ffaa88', bg = 'grey', gui='italic,bold' }
             }
         },
-        lualine_b = {'buffers'},
+        --lualine_b = {'buffers'},
+        lualine_b = {},
         lualine_c = {
             {
                 'filename',

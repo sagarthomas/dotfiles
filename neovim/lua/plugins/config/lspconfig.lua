@@ -54,7 +54,7 @@ local servers = {
   gopls = {},
   pyright = {},
   rust_analyzer = {},
-  -- tsserver = {},
+  tsserver = {},
 
   lua_ls = {
     Lua = {
@@ -65,14 +65,14 @@ local servers = {
 }
 
 -- Setup neovim lua configuration
-require('neodev').setup()
+--require('neodev').setup()
 --
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Setup mason so it can manage external tooling
-require('mason').setup()
+--require('mason').setup()
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
@@ -87,16 +87,18 @@ mason_lspconfig.setup_handlers {
       capabilities = capabilities,
       on_attach = on_attach,
       settings = servers[server_name],
+      filetypes = (servers[server_name] or {}).filetypes,
     }
   end,
 }
 
 -- Turn on lsp status information
-require('fidget').setup()
+--require('fidget').setup()
 
 -- nvim-cmp setup
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
+require('luasnip.loaders.from_vscode').lazy_load()
 local lspkind = require 'lspkind'
 
 cmp.setup {

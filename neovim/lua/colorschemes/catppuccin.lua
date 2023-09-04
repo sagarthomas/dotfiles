@@ -1,6 +1,6 @@
 local catppuccin = require("catppuccin")
 
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 local cp = require("catppuccin.palettes").get_palette()
 
 catppuccin.setup({
