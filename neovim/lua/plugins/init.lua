@@ -26,6 +26,11 @@ return {
           --"folke/neodev.nvim",
         }
     },
+    {
+        "j-hui/fidget.nvim",
+        tag = "legacy",
+        event = "LspAttach"
+    },
     -- Autocompletion
     {
         "hrsh7th/nvim-cmp",

@@ -34,6 +34,7 @@ require('plugins.config.blankline')
 require('plugins.config.gitsigns')
 require('plugins.config.lspconfig')
 require('plugins.config.nvimtree')
+require('plugins.config.fidget')
 
 
 local function open_nvim_tree(data)
