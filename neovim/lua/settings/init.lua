@@ -35,8 +35,8 @@ vim.wo.signcolumn = 'yes'
 vim.o.completeopt = 'menuone,noselect'
 
 set.termguicolors = true
-vim.cmd[[set colorcolumn=80]]
-vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
+-- vim.cmd[[set colorcolumn=80]]
+-- vim.cmd[[highlight ColorColumn ctermbg=0 guibg=lightgrey]]
 vim.cmd[[set clipboard=unnamedplus]]
 set.laststatus = 2
 set.conceallevel = 3
