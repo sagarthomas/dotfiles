@@ -1,0 +1,20 @@
+{
+  "name": "answer",
+  "version": "0.1.0",
+  "description": "/answer turns the latest assistant message into questions you answer in a form",
+  "types": "./types/index.d.ts",
+  "userConfig": {
+    "model": {
+      "type": "string",
+      "title": "Extraction model",
+      "description": "Model alias or id that extracts the questions",
+      "default": "claude-haiku-5-5"
+    },
+    "debug": {
+      "type": "boolean",
+      "title": "Debug logging",
+      "description": "Log the source messages and extractor replies to the transcript",
+      "default": false
+    }
+  }
+}
